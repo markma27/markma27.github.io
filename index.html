@@ -398,6 +398,8 @@ body::after {
 .jm-card:hover .jm-go { background: var(--pen); color: #fff; }
 .jm-all { margin-top: 14px; font-size: 15px; }
 @media (max-width: 560px) { .jm-card { grid-template-columns: 36px 1fr; padding: 18px; gap: 14px; align-items: start; } .jm-mark { width: 36px; height: 36px; } .jm-go { display: none; } }
+.app-logo { display: flex; align-items: center; flex-wrap: wrap; gap: 10px; }
+.app-logo .tag.xa { font-size: 12px; font-weight: 600; letter-spacing: 0; color: var(--c, var(--pen)); border: 1px solid color-mix(in srgb, var(--c, var(--pen)) 35%, transparent); border-radius: 99px; padding: 3px 9px; line-height: 1.4; }
 </style>
 </head>
 <body>
@@ -452,7 +454,7 @@ body::after {
       <h2 class="rv">Apps</h2>
       <div>
         <article class="app band rv" style="--c:var(--purple)">
-          <h3 class="app-logo"><img class="on-light" src="logos/prepaidly.svg" alt="Prepaidly" width="162" height="44" style="width:162px;height:44px"><img class="on-dark" src="logos/prepaidly-dark.svg" alt="" width="162" height="44" style="width:162px;height:44px"></h3>
+          <h3 class="app-logo"><img class="on-light" src="logos/prepaidly.svg" alt="Prepaidly" width="162" height="44" style="width:162px;height:44px"><img class="on-dark" src="logos/prepaidly-dark.svg" alt="" width="162" height="44" style="width:162px;height:44px"><span class="tag xa">Xero add-on</span></h3>
           <p class="what">Handles prepayments and unearned revenue in Xero. You set up the schedule once and it posts the monthly journals, so nobody has to keep a spreadsheet for it.</p>
           <p class="meta">Free plan, then A$49 or A$79 a month. <a href="https://prepaidly.io">prepaidly.io</a></p>
           <div class="demo">
@@ -475,7 +477,7 @@ body::after {
         </article>
 
         <article class="app band rv" style="--c:var(--va)">
-          <h3 class="app-logo"><img class="on-light" src="logos/vendoralert.svg" alt="VendorAlert" width="180" height="25" style="width:180px;height:25px"><img class="on-dark" src="logos/vendoralert-dark.svg" alt="" width="180" height="25" style="width:180px;height:25px"></h3>
+          <h3 class="app-logo"><img class="on-light" src="logos/vendoralert.svg" alt="VendorAlert" width="180" height="25" style="width:180px;height:25px"><img class="on-dark" src="logos/vendoralert-dark.svg" alt="" width="180" height="25" style="width:180px;height:25px"><span class="tag xa">Xero add-on</span></h3>
           <p class="what">When someone changes a supplier's bank details in Xero, Xero only tells the person who made the change. VendorAlert emails the people who approve payments and keeps a record of what changed, who changed it and when.</p>
           <p class="meta">A$9 a month per Xero organisation, 14-day free trial. <a href="https://vendoralert.com.au">vendoralert.com.au</a></p>
           <div class="demo">
@@ -649,7 +651,7 @@ body::after {
       <h2 class="rv">About</h2>
       <div class="text">
         <p class="rv" style="--d:1">I've worked in finance for fifteen years, first in industry and since 2015 at Jaquillard Minns, where I've been Managing Director since 2019. Most of my work is virtual CFO, financial reporting and forecasting, for clients ranging from start-ups and families to listed companies.</p>
-        <p class="rv" style="--d:2">I've always fixed finance problems with code, starting with Excel VBA models and spreadsheets that ran themselves, and now full products. Prepaidly and VendorAlert are the two I've shipped most recently.</p>
+        <p class="rv" style="--d:2">I've always fixed finance problems with code, starting with Excel VBA models and spreadsheets that ran themselves, and now full products. Prepaidly and VendorAlert, both Xero add-ons, are the two I've shipped most recently.</p>
         <p class="rv" style="--d:3">The test I use for anything I build is plain. Does it make month-end shorter, and does it make the numbers easier to trust?</p>
       </div>
     </section>
