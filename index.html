@@ -385,21 +385,33 @@ body::after {
   .months i, .bank dd { transition: none; }
 }
 
-/* Building JMOS teaser */
-.jm-intro { color: var(--muted); font-size: 17px; margin-bottom: 18px; }
-.jm-card { display: grid; grid-template-columns: 44px 1fr auto; gap: 18px; align-items: center; padding: 20px 22px; background: var(--paper); border: 1px solid var(--line); border-radius: 16px; text-decoration: none; color: var(--ink); box-shadow: 0 18px 40px -30px rgba(208,20,45,.45); transition: border-color .25s ease, box-shadow .25s ease; }
-.jm-card:hover { border-color: color-mix(in srgb, #D0142D 35%, var(--line)); box-shadow: 0 0 0 3px color-mix(in srgb, #D0142D 10%, transparent), 0 18px 40px -30px rgba(208,20,45,.45); }
-.jm-mark { width: 44px; height: 44px; display: block; }
-.jm-body { display: flex; flex-direction: column; gap: 3px; min-width: 0; }
-.jm-meta { font-family: var(--mono); font-size: 12px; color: var(--muted); }
-.jm-title { font-size: 19px; font-weight: 800; letter-spacing: -0.02em; line-height: 1.3; }
-.jm-desc { font-size: 15px; color: var(--muted); line-height: 1.5; }
-.jm-go { font-size: 14px; font-weight: 700; color: var(--pen); padding: 7px 14px; border-radius: 999px; border: 1px solid color-mix(in srgb, var(--pen) 30%, var(--line)); white-space: nowrap; }
-.jm-card:hover .jm-go { background: var(--pen); color: #fff; }
-.jm-all { margin-top: 14px; font-size: 15px; }
-@media (max-width: 560px) { .jm-card { grid-template-columns: 36px 1fr; padding: 18px; gap: 14px; align-items: start; } .jm-mark { width: 36px; height: 36px; } .jm-go { display: none; } }
 .app-logo { display: flex; align-items: center; flex-wrap: wrap; gap: 10px; }
 .app-logo .tag.xa { font-size: 12px; font-weight: 600; letter-spacing: 0; color: var(--c, var(--pen)); border: 1px solid color-mix(in srgb, var(--c, var(--pen)) 35%, transparent); border-radius: 99px; padding: 3px 9px; line-height: 1.4; }
+#jmos .app.band::before { background: color-mix(in srgb, var(--c) 5%, var(--bg)); }
+/* Building JMOS band */
+#jmos { padding-bottom: 0; }
+#jmos > div { margin-top: -57px; }
+#jmos .app.band { padding-top: 61px; }
+#jmos h3.app-logo picture img { display: block; }
+.jm-flow { display: flex; align-items: center; gap: 16px; padding-bottom: 18px; border-bottom: 1px dashed var(--line); }
+.jm-sys { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: 6px; flex: 1; }
+.jm-sys li { font-size: 12.5px; font-weight: 600; padding: 4px 10px; border-radius: 99px; border: 1px dashed color-mix(in srgb, var(--faint) 70%, transparent); color: var(--ink); background: var(--bg); }
+.jm-arrow { flex: 0 0 46px; height: 2px; background: linear-gradient(90deg, var(--line), #D0142D); position: relative; }
+.jm-arrow::after { content: ""; position: absolute; right: -1px; top: -4px; border: 5px solid transparent; border-left: 7px solid #D0142D; border-right: 0; }
+.jm-hub { width: 48px; height: 48px; flex: none; filter: drop-shadow(0 8px 14px rgba(208,20,45,.35)); }
+.jm-parts { list-style: none; margin: 6px 0 0; padding: 0; font-variant-numeric: tabular-nums; }
+.jm-parts li { display: grid; grid-template-columns: 34px 1fr auto; gap: 12px; align-items: baseline; padding: 11px 0; border-bottom: 1px solid var(--line); font-size: 16px; }
+.jm-parts li:last-child { border-bottom: 0; padding-bottom: 0; }
+.jm-parts .n, .jm-parts .d { font-family: var(--mono); font-size: 12.5px; color: var(--muted); }
+.jm-parts a { font-weight: 700; letter-spacing: -0.01em; text-decoration: none; }
+.jm-parts a:hover { text-decoration: underline; text-decoration-color: #D0142D; }
+.jm-parts li.soon .t, .jm-parts li.soon .n { color: var(--faint); }
+.jm-parts li.soon .t { font-weight: 600; }
+@media (max-width: 560px) {
+  .jm-arrow, .jm-hub { display: none; }
+  .jm-parts li { grid-template-columns: 28px 1fr; }
+  .jm-parts .d { grid-column: 2; }
+}
 </style>
 </head>
 <body>
@@ -633,17 +645,24 @@ body::after {
     <section class="row" id="jmos">
       <h2 class="rv">Building JMOS<small>A series</small></h2>
       <div>
-        <p class="rv jm-intro" style="--d:1">The operating system I'm building for our firm, written up as I go.</p>
-        <a class="jm-card rv" style="--d:2" id="jmLatest" href="/jmos/why-build/">
-          <img class="jm-mark" src="logos/jmos-mark.svg" alt="" width="44" height="44">
-          <span class="jm-body">
-            <span class="jm-meta" id="jmMeta">Latest: part 1, Nov 2026</span>
-            <span class="jm-title" id="jmTitle">Why I'm building my firm's own operating system</span>
-            <span class="jm-desc" id="jmDesc">A stack of systems that don't talk to each other, and why I decided to build instead of buy.</span>
-          </span>
-          <span class="jm-go" aria-hidden="true">Read</span>
-        </a>
-        <p class="rv jm-all" style="--d:3"><a href="/jmos/">All parts of the series</a></p>
+        <article class="app band rv" style="--c:#D0142D">
+          <h3 class="app-logo"><picture><source srcset="logos/jmos-dark.svg" media="(prefers-color-scheme: dark)"><img src="logos/jmos.svg" alt="JMOS" width="115" height="48" style="width:115px;height:48px"></picture><span class="tag xa">Internal to JM</span></h3>
+          <p class="what">The operating system I'm building for Jaquillard Minns. It connects the systems the firm already runs on, so information is entered once and flows where it's needed. I'm writing up the build as I go.</p>
+          <p class="meta">A series, with each part on LinkedIn first. <a href="/jmos/">Read the series</a></p>
+          <div class="demo jm-demo">
+            <div class="jm-flow" aria-label="The firm's systems connect into JMOS">
+              <ul class="jm-sys">
+                <li>Xero</li><li>XPM</li><li>Class</li><li>NowInfinity</li><li>Employment Hero</li><li>SharePoint</li><li>Outlook</li><li>Annature</li>
+              </ul>
+              <span class="jm-arrow" aria-hidden="true"></span>
+              <img class="jm-hub" src="logos/jmos-mark.svg" alt="JMOS" width="48" height="48">
+            </div>
+            <ol class="jm-parts" id="jmParts">
+              <li><span class="n">01</span><a href="/jmos/why-build/">Why I'm building my firm's own operating system</a><span class="d">Nov 2026</span></li>
+              <li class="soon"><span class="n">02</span><span class="t">Getting the data into one place</span><span class="d">Coming</span></li>
+            </ol>
+          </div>
+        </article>
       </div>
     </section>
 
@@ -729,19 +748,23 @@ body::after {
 
 
 
-  /* Building JMOS: show the latest published part from the series page */
+  /* Building JMOS: copy the parts list from the series page, so new parts show up here */
   (function () {
-    var card = document.getElementById('jmLatest'); if (!card || !window.fetch || !window.DOMParser) return;
+    var list = document.getElementById('jmParts'); if (!list || !window.fetch || !window.DOMParser) return;
     fetch('/jmos/', { cache: 'no-cache' }).then(function (r) { return r.ok ? r.text() : null; }).then(function (html) {
       if (!html) return;
-      var d = new DOMParser().parseFromString(html, 'text/html');
-      var items = d.querySelectorAll('.parts li:not(.soon)'); if (!items.length) return;
-      var li = items[items.length - 1], a = li.querySelector('.t a'); if (!a) return;
-      var desc = li.querySelector('.t span'), n = li.querySelector('.n'), dt = li.querySelector('.d');
-      card.href = a.getAttribute('href');
-      document.getElementById('jmTitle').textContent = a.textContent;
-      if (desc) document.getElementById('jmDesc').textContent = desc.textContent;
-      document.getElementById('jmMeta').textContent = 'Latest: part ' + parseInt(n ? n.textContent : items.length, 10) + (dt ? ', ' + dt.textContent : '');
+      var items = new DOMParser().parseFromString(html, 'text/html').querySelectorAll('.parts li'); if (!items.length) return;
+      var out = [];
+      Array.prototype.forEach.call(items, function (li) {
+        var n = li.querySelector('.n'), d = li.querySelector('.d'), a = li.querySelector('.t a'), t = li.querySelector('.t');
+        var row = document.createElement('li'); if (li.classList.contains('soon')) row.className = 'soon';
+        var sn = document.createElement('span'); sn.className = 'n'; sn.textContent = n ? n.textContent : ''; row.appendChild(sn);
+        if (a) { var na = document.createElement('a'); na.href = a.getAttribute('href'); na.textContent = a.textContent; row.appendChild(na); }
+        else { var st = document.createElement('span'); st.className = 't'; st.textContent = t ? t.textContent : ''; row.appendChild(st); }
+        var sd = document.createElement('span'); sd.className = 'd'; sd.textContent = d ? d.textContent : ''; row.appendChild(sd);
+        out.push(row);
+      });
+      list.replaceChildren.apply(list, out);
     }).catch(function () {});
   })();
 
