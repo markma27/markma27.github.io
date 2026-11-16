@@ -387,31 +387,16 @@ body::after {
 
 .app-logo { display: flex; align-items: center; flex-wrap: wrap; gap: 10px; }
 .app-logo .tag.xa { font-size: 12px; font-weight: 600; letter-spacing: 0; color: var(--c, var(--pen)); border: 1px solid color-mix(in srgb, var(--c, var(--pen)) 35%, transparent); border-radius: 99px; padding: 3px 9px; line-height: 1.4; }
-#jmos .app.band::before { background: color-mix(in srgb, var(--c) 5%, var(--bg)); }
-/* Building JMOS band */
-#jmos { padding-bottom: 0; }
-#jmos > div { margin-top: -57px; }
-#jmos .app.band { padding-top: 61px; }
-#jmos h3.app-logo picture img { display: block; }
-.jm-flow { display: flex; align-items: center; gap: 16px; padding-bottom: 18px; border-bottom: 1px dashed var(--line); }
-.jm-sys { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: 6px; flex: 1; }
-.jm-sys li { font-size: 12.5px; font-weight: 600; padding: 4px 10px; border-radius: 99px; border: 1px dashed color-mix(in srgb, var(--faint) 70%, transparent); color: var(--ink); background: var(--bg); }
-.jm-arrow { flex: 0 0 46px; height: 2px; background: linear-gradient(90deg, var(--line), #D0142D); position: relative; }
-.jm-arrow::after { content: ""; position: absolute; right: -1px; top: -4px; border: 5px solid transparent; border-left: 7px solid #D0142D; border-right: 0; }
-.jm-hub { width: 48px; height: 48px; flex: none; filter: drop-shadow(0 8px 14px rgba(208,20,45,.35)); }
-.jm-parts { list-style: none; margin: 6px 0 0; padding: 0; font-variant-numeric: tabular-nums; }
-.jm-parts li { display: grid; grid-template-columns: 34px 1fr auto; gap: 12px; align-items: baseline; padding: 11px 0; border-bottom: 1px solid var(--line); font-size: 16px; }
-.jm-parts li:last-child { border-bottom: 0; padding-bottom: 0; }
-.jm-parts .n, .jm-parts .d { font-family: var(--mono); font-size: 12.5px; color: var(--muted); }
+/* Building JMOS: plain list */
+.jm-parts { list-style: none; margin: 22px 0 0; padding: 0; font-variant-numeric: tabular-nums; }
+.jm-parts li { display: grid; grid-template-columns: 40px 1fr auto; gap: 12px; align-items: baseline; padding: 13px 0; border-bottom: 1px solid var(--line); }
+.jm-parts li:first-child { border-top: 1px solid var(--ink); }
+.jm-parts .n, .jm-parts .d { font-family: var(--mono); font-size: 13px; color: var(--muted); }
 .jm-parts a { font-weight: 700; letter-spacing: -0.01em; text-decoration: none; }
-.jm-parts a:hover { text-decoration: underline; text-decoration-color: #D0142D; }
+.jm-parts a:hover { text-decoration: underline; text-decoration-color: var(--pen); }
 .jm-parts li.soon .t, .jm-parts li.soon .n { color: var(--faint); }
-.jm-parts li.soon .t { font-weight: 600; }
-@media (max-width: 560px) {
-  .jm-arrow, .jm-hub { display: none; }
-  .jm-parts li { grid-template-columns: 28px 1fr; }
-  .jm-parts .d { grid-column: 2; }
-}
+.jm-all { margin-top: 16px; font-size: 15px; }
+@media (max-width: 560px) { .jm-parts li { grid-template-columns: 32px 1fr; } .jm-parts .d { grid-column: 2; } }
 </style>
 </head>
 <body>
@@ -644,25 +629,13 @@ body::after {
 
     <section class="row" id="jmos">
       <h2 class="rv">Building JMOS<small>A series</small></h2>
-      <div>
-        <article class="app band rv" style="--c:#D0142D">
-          <h3 class="app-logo"><picture><source srcset="logos/jmos-dark.svg" media="(prefers-color-scheme: dark)"><img src="logos/jmos.svg" alt="JMOS" width="115" height="48" style="width:115px;height:48px"></picture><span class="tag xa">Internal to JM</span></h3>
-          <p class="what">The operating system I'm building for Jaquillard Minns. It connects the systems the firm already runs on, so information is entered once and flows where it's needed. I'm writing up the build as I go.</p>
-          <p class="meta">A series, with each part on LinkedIn first. <a href="/jmos/">Read the series</a></p>
-          <div class="demo jm-demo">
-            <div class="jm-flow" aria-label="The firm's systems connect into JMOS">
-              <ul class="jm-sys">
-                <li>Xero</li><li>XPM</li><li>Class</li><li>NowInfinity</li><li>Employment Hero</li><li>SharePoint</li><li>Outlook</li><li>Annature</li>
-              </ul>
-              <span class="jm-arrow" aria-hidden="true"></span>
-              <img class="jm-hub" src="logos/jmos-mark.svg" alt="JMOS" width="48" height="48">
-            </div>
-            <ol class="jm-parts" id="jmParts">
-              <li><span class="n">01</span><a href="/jmos/why-build/">Why I'm building my firm's own operating system</a><span class="d">Nov 2026</span></li>
-              <li class="soon"><span class="n">02</span><span class="t">Getting the data into one place</span><span class="d">Coming</span></li>
-            </ol>
-          </div>
-        </article>
+      <div class="text">
+        <p class="rv" style="--d:1">JMOS is the operating system I'm building for our firm. I'm writing up the build as I go.</p>
+        <ol class="jm-parts rv" style="--d:2" id="jmParts">
+          <li><span class="n">01</span><a href="/jmos/why-build/">Why I'm building my firm's own operating system</a><span class="d">Nov 2026</span></li>
+          <li class="soon"><span class="n">02</span><span class="t">Getting the data into one place</span><span class="d">Coming</span></li>
+        </ol>
+        <p class="rv jm-all" style="--d:3"><a href="/jmos/">Read the series</a></p>
       </div>
     </section>
 
