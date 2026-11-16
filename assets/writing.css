@@ -133,3 +133,43 @@ footer.dark { margin: 72px calc(50% - 50vw) 0; padding: 0 calc(50vw - 50%); colo
 @media (max-width: 620px) { .stack li, .stack li:last-child { flex-basis: calc(50% - 4px); grid-column: auto; } }
 .stack li { padding: 10px 4px; white-space: nowrap; }
 .stack li small { white-space: normal; }
+
+/* Figure: entered once */
+.flow { margin: 2em 0; display: grid; grid-template-columns: 1fr 1fr; gap: 14px; font-size: 15px; }
+.flow-col { background: var(--paper); border: 1px solid var(--line); border-radius: 14px; padding: 18px 18px 16px; display: flex; flex-direction: column; }
+.flow-col.is-jmos { border-color: color-mix(in srgb, #D0142D 30%, var(--line)); box-shadow: 0 16px 36px -26px rgba(208,20,45,.5); }
+.flow-h { font-size: 13px; font-weight: 700; color: var(--muted); }
+.is-jmos .flow-h { color: #D0142D; }
+.flow-src { margin-top: 8px; font-weight: 700; letter-spacing: -0.01em; padding: 9px 12px; border-radius: 10px; background: var(--bg); border: 1px solid var(--line); }
+.flow-hub { display: flex; align-items: center; gap: 10px; margin: 10px 0 0; padding-left: 12px; position: relative; }
+.flow-hub img { height: 28px; width: auto; display: block; }
+.flow-hub span { font-size: 13px; color: var(--muted); }
+.flow-list { list-style: none; margin: 10px 0 0; padding: 0 0 0 12px; border-left: 1px dashed var(--faint); margin-left: 12px; }
+.flow-list li { display: flex; justify-content: space-between; gap: 10px; padding: 7px 0 7px 12px; border-bottom: 1px solid var(--line); position: relative; }
+.flow-list li::before { content: ""; position: absolute; left: -13px; top: 50%; width: 12px; height: 1px; background: var(--faint); }
+.flow-list li:last-child { border-bottom: 0; }
+.flow-list span { color: var(--red, #E5484D); font-size: 13px; font-family: var(--mono); }
+.flow-list span.ok { color: #12805C; }
+.flow-list span.ok::before { content: "✓ "; }
+.flow-foot { margin-top: auto; padding-top: 12px; font-size: 13px; color: var(--muted); line-height: 1.45; }
+.flow-foot b { color: var(--ink); }
+.flow figcaption { grid-column: 1 / -1; font-size: 13px; color: var(--muted); text-align: center; }
+@media (prefers-color-scheme: dark) { .flow-list span.ok { color: #3DD68C; } .flow-list span { color: #FF6B6F; } }
+@media (max-width: 620px) { .flow { grid-template-columns: 1fr; } }
+
+/* Figure: the path to JMOS */
+.path { margin: 1.8em 0; }
+.path ol { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(5, 1fr); position: relative; counter-reset: s; }
+.path ol::before { content: ""; position: absolute; left: 7px; right: 7px; top: 6px; height: 2px; background: linear-gradient(90deg, var(--line), var(--pen) 70%, #D0142D); }
+.path li { position: relative; padding: 24px 8px 0 0; font-size: 14px; line-height: 1.35; }
+.path li::before { content: ""; position: absolute; left: 0; top: 0; width: 14px; height: 14px; border-radius: 50%; background: var(--bg); border: 2px solid var(--pen); box-sizing: border-box; }
+.path li b { display: block; font-weight: 800; letter-spacing: -0.01em; }
+.path li span { color: var(--muted); font-size: 13px; }
+.path li.now::before { background: #D0142D; border-color: #D0142D; box-shadow: 0 0 0 4px color-mix(in srgb, #D0142D 18%, transparent); }
+.path li.now b { color: #D0142D; }
+@media (max-width: 620px) {
+  .path ol { grid-template-columns: 1fr; gap: 14px; padding-left: 26px; }
+  .path ol::before { left: 6px; right: auto; top: 7px; bottom: 7px; width: 2px; height: auto; background: linear-gradient(180deg, var(--line), var(--pen) 70%, #D0142D); }
+  .path li { padding: 0; }
+  .path li::before { left: -26px; top: 2px; }
+}

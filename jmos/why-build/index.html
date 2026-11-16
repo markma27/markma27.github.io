@@ -12,7 +12,7 @@
 <meta property="og:url" content="https://markma.au/jmos/why-build/">
 <meta property="og:title" content="Why I'm building my firm's own operating system">
 <meta property="og:description" content="Part 1 of Building JMOS. A stack of systems that don't talk to each other, and why I decided to build instead of buy.">
-<meta property="og:image" content="https://markma.au/og.jpg">
+<meta property="og:image" content="https://markma.au/og/jmos-part-1.jpg">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image">
@@ -20,7 +20,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="/assets/writing.css?v=3">
+<link rel="stylesheet" href="/assets/writing.css?v=4">
 </head>
 <body>
 <div class="page">
@@ -72,6 +72,32 @@
 
           <p>The trouble is that they don't talk to each other properly. So a lot of what happens in an accounting firm every day isn't accounting. It's moving information from one system to another, keying it in again, and then checking it arrived correctly.</p>
           <p>The checking matters. The moving shouldn't be anyone's job.</p>
+          <figure class="flow" aria-label="Example: a client's new address, updated by hand in four systems today, entered once with JMOS">
+            <div class="flow-col">
+              <p class="flow-h">Today</p>
+              <p class="flow-src">A client sends a new address</p>
+              <ol class="flow-list">
+                <li><b>XPM</b><span>typed in</span></li>
+                <li><b>NowInfinity</b><span>typed again</span></li>
+                <li><b>Class</b><span>typed again</span></li>
+                <li><b>Outlook</b><span>typed again</span></li>
+              </ol>
+              <p class="flow-foot"><b>4</b> entries, <b>4</b> chances for a typo, and someone checks each one</p>
+            </div>
+            <div class="flow-col is-jmos">
+              <p class="flow-h">With JMOS</p>
+              <p class="flow-src">A client sends a new address</p>
+              <div class="flow-hub"><picture><source srcset="/logos/jmos-dark.svg" media="(prefers-color-scheme: dark)"><img src="/logos/jmos.svg" alt="JMOS" width="86" height="36"></picture><span>entered once</span></div>
+              <ol class="flow-list">
+                <li><b>XPM</b><span class="ok">updated</span></li>
+                <li><b>NowInfinity</b><span class="ok">updated</span></li>
+                <li><b>Class</b><span class="ok">updated</span></li>
+                <li><b>Outlook</b><span class="ok">updated</span></li>
+              </ol>
+              <p class="flow-foot"><b>1</b> entry, then a person reviews it</p>
+            </div>
+            <figcaption>The idea, using an everyday example.</figcaption>
+          </figure>
 
           <h2>Why build, not buy</h2>
           <p>I could have bought another tool. Plenty of practice software promises to tie everything together, and a lot of it ends up adding one more system to the list.</p>
@@ -81,6 +107,15 @@
 
           <h2>Why now</h2>
           <p>I'm not a full-time developer. I started with Excel VBA macros years ago, then moved on to web tools, a Chrome extension, and the products I've shipped since, including Prepaidly and VendorAlert.</p>
+          <figure class="path" aria-label="From Excel VBA to JMOS">
+            <ol>
+              <li><b>Excel VBA</b><span>Macros and models</span></li>
+              <li><b>The web</b><span>HP Schedule</span></li>
+              <li><b>Chrome</b><span>Time Tracker</span></li>
+              <li><b>Products</b><span>VendorAlert, Prepaidly</span></li>
+              <li class="now"><b>JMOS</b><span>Our firm's system</span></li>
+            </ol>
+          </figure>
           <p>Today I build with AI as my co-developer, working with Cursor and Claude. That's the main reason a project like this is possible for a firm our size. A few years ago it would have needed a development team. Now it needs someone who understands the work and is willing to keep at it.</p>
 
           <h2>What this series is</h2>
