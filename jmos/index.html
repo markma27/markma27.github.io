@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Building JMOS, by Mark Ma</title>
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<meta name="description" content="A series about building JMOS, the operating system for Jaquillard Minns, an accounting firm in Adelaide. What we built, what worked, what broke.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://markma.au/jmos/">
+<meta property="og:title" content="Building JMOS, by Mark Ma">
+<meta property="og:description" content="An accountant building his firm's own operating system, written up as it happens.">
+<meta property="og:image" content="https://markma.au/og.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="canonical" href="https://markma.au/jmos/">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/writing.css">
+</head>
+<body>
+<div class="page">
+
+  <header>
+    <a class="name" href="/">Mark Ma</a>
+    <span class="where"><b>Adelaide</b> <span id="clock">&nbsp;</span></span>
+    <nav aria-label="Main">
+      <a href="/#apps">Apps</a>
+      <a href="/#journey">Journey</a>
+      <a href="/jmos/" aria-current="page">JMOS</a>
+      <a href="/#about">About</a>
+      <a href="/#career">Career</a>
+    </nav>
+  </header>
+
+  <main>
+    <div class="head">
+      <p class="lbl">A series<small>Started Nov 2026</small></p>
+      <div>
+        <h1>Building JMOS</h1>
+        <p class="stand">JMOS is the operating system I'm building for Jaquillard Minns, our accounting firm in Adelaide. It connects the systems we already use so information is entered once and flows where it's needed, and people spend less time copying and more time on review, judgement and clients. It's internal, not a product. This is the story of building it, written as I go.</p>
+      </div>
+    </div>
+
+    <section class="row">
+      <h2>Parts<small>Newest last</small></h2>
+      <div>
+        <ol class="parts">
+          <li>
+            <span class="n">01</span>
+            <span class="t"><a href="/jmos/why-build/">Why I'm building my firm's own operating system</a><span>Five systems that don't talk to each other, and why I decided to build instead of buy.</span></span>
+            <span class="d">Nov 2026</span>
+          </li>
+          <li class="soon">
+            <span class="n">02</span>
+            <span class="t">Getting the data into one place</span>
+            <span class="d">Coming</span>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <section class="row">
+      <h2>Follow along</h2>
+      <div class="after">
+        <a class="btn" href="https://www.linkedin.com/in/markma922/">Follow on LinkedIn</a>
+        <span class="next">Each part goes up on LinkedIn first, with the longer version here.</span>
+      </div>
+    </section>
+  </main>
+
+  <footer class="dark">
+    <div class="foot-top">
+      <div class="foot-id">
+        <b>Mark Ma</b>
+        <p>Accountant in Adelaide. I also build software for finance work.</p>
+        <a class="foot-cta" href="https://www.linkedin.com/in/markma922/">Message me on LinkedIn</a>
+      </div>
+      <nav class="foot-col" aria-label="Products">
+        <h3>Products</h3>
+        <a href="https://prepaidly.io">Prepaidly</a>
+        <a href="https://vendoralert.com.au">VendorAlert</a>
+        <a href="https://hpschedule.com/">HP Schedule</a>
+        <a href="https://chromewebstore.google.com/detail/time-tracker/jjceiaiffpompakfbikfbhpecgkgpeoa">Time Tracker</a>
+      </nav>
+      <nav class="foot-col" aria-label="Site">
+        <h3>Site</h3>
+        <a href="/">Home</a>
+        <a href="/#apps">Apps</a>
+        <a href="/#journey">Dev Journey</a>
+        <a href="/jmos/">Building JMOS</a>
+        <a href="/#career">Career</a>
+      </nav>
+      <div class="foot-col">
+        <h3>Adelaide</h3>
+        <span class="foot-clock" id="footClock">&nbsp;</span>
+        <span>South Australia</span>
+      </div>
+    </div>
+    <div class="foot"><span>© 2026 Mark Ma</span><span>Designed and built in Adelaide</span></div>
+    <div class="wordmark" aria-hidden="true">Mark Ma</div>
+  </footer>
+
+</div>
+<script>
+(function () {
+  var a = document.getElementById('clock'), b = document.getElementById('footClock');
+  function tick() {
+    var t = '';
+    try { t = new Intl.DateTimeFormat('en-AU', { timeZone: 'Australia/Adelaide', hour: 'numeric', minute: '2-digit' }).format(new Date()).toLowerCase(); } catch (e) {}
+    if (a) a.textContent = t; if (b) b.textContent = t;
+  }
+  tick(); setInterval(tick, 30000);
+})();
+</script>
+</body>
+</html>
