@@ -120,3 +120,18 @@ footer.dark { margin: 72px calc(50% - 50vw) 0; padding: 0 calc(50vw - 50%); colo
   .parts li { grid-template-columns: 40px 1fr; }
   .parts .d { grid-column: 2; }
 }
+
+/* JMOS logo */
+.on-dark { display: none; }
+@media (prefers-color-scheme: dark) { .on-light { display: none; } .on-dark { display: inline-block; } }
+.series-logo { margin-bottom: 22px; }
+.series-logo img { height: 54px; width: auto; }
+.stack ul { display: flex; flex-wrap: wrap; justify-content: center; }
+.stack li { flex: 0 1 calc(25% - 6px); }
+.stack .hub { background: var(--paper); border: 1px solid var(--line); padding: 8px 18px 6px; box-shadow: 0 10px 24px -14px rgba(208,20,45,.45); }
+.stack .hub img { height: 40px; width: auto; display: block; }
+@media (max-width: 620px) { .stack li, .stack li:last-child { flex-basis: calc(50% - 4px); grid-column: auto; } }
+.stack .hub img.on-dark { display: none; }
+@media (prefers-color-scheme: dark) { .stack .hub img.on-light { display: none; } .stack .hub img.on-dark { display: block; } }
+.stack li { padding: 10px 4px; white-space: nowrap; }
+.stack li small { white-space: normal; }
