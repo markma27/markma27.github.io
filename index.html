@@ -388,6 +388,8 @@ body::after {
 .app-logo { display: flex; align-items: center; flex-wrap: wrap; gap: 10px; }
 .app-logo .tag.xa { font-size: 12px; font-weight: 600; letter-spacing: 0; color: var(--c, var(--pen)); border: 1px solid color-mix(in srgb, var(--c, var(--pen)) 35%, transparent); border-radius: 99px; padding: 3px 9px; line-height: 1.4; }
 /* Building JMOS: plain list */
+.jm-logo { display: block; margin-bottom: 14px; }
+.jm-logo img { height: 40px; width: auto; display: block; }
 .jm-parts { list-style: none; margin: 22px 0 0; padding: 0; font-variant-numeric: tabular-nums; }
 .jm-parts li { display: grid; grid-template-columns: 40px 1fr auto; gap: 12px; align-items: baseline; padding: 13px 0; border-bottom: 1px solid var(--line); }
 .jm-parts li:first-child { border-top: 1px solid var(--ink); }
@@ -630,6 +632,7 @@ body::after {
     <section class="row" id="jmos">
       <h2 class="rv">Building JMOS<small>A series</small></h2>
       <div class="text">
+        <picture class="jm-logo rv"><source srcset="logos/jmos-dark.svg" media="(prefers-color-scheme: dark)"><img src="logos/jmos.svg" alt="JMOS" width="96" height="40"></picture>
         <p class="rv" style="--d:1">JMOS is the operating system I'm building for our firm. I'm writing up the build as I go.</p>
         <ol class="jm-parts rv" style="--d:2" id="jmParts">
           <li><span class="n">01</span><a href="/jmos/why-build/">Why I'm building my firm's own operating system</a><span class="d">Nov 2026</span></li>
