@@ -384,6 +384,20 @@ body::after {
   .tline, .tline svg path { animation: none; opacity: 1; transform: none; stroke-dashoffset: 0; }
   .months i, .bank dd { transition: none; }
 }
+
+/* Building JMOS teaser */
+.jm-intro { color: var(--muted); font-size: 17px; margin-bottom: 18px; }
+.jm-card { display: grid; grid-template-columns: 44px 1fr auto; gap: 18px; align-items: center; padding: 20px 22px; background: var(--paper); border: 1px solid var(--line); border-radius: 16px; text-decoration: none; color: var(--ink); box-shadow: 0 18px 40px -30px rgba(208,20,45,.45); transition: border-color .25s ease, box-shadow .25s ease; }
+.jm-card:hover { border-color: color-mix(in srgb, #D0142D 35%, var(--line)); box-shadow: 0 0 0 3px color-mix(in srgb, #D0142D 10%, transparent), 0 18px 40px -30px rgba(208,20,45,.45); }
+.jm-mark { width: 44px; height: 44px; display: block; }
+.jm-body { display: flex; flex-direction: column; gap: 3px; min-width: 0; }
+.jm-meta { font-family: var(--mono); font-size: 12px; color: var(--muted); }
+.jm-title { font-size: 19px; font-weight: 800; letter-spacing: -0.02em; line-height: 1.3; }
+.jm-desc { font-size: 15px; color: var(--muted); line-height: 1.5; }
+.jm-go { font-size: 14px; font-weight: 700; color: var(--pen); padding: 7px 14px; border-radius: 999px; border: 1px solid color-mix(in srgb, var(--pen) 30%, var(--line)); white-space: nowrap; }
+.jm-card:hover .jm-go { background: var(--pen); color: #fff; }
+.jm-all { margin-top: 14px; font-size: 15px; }
+@media (max-width: 560px) { .jm-card { grid-template-columns: 36px 1fr; padding: 18px; gap: 14px; align-items: start; } .jm-mark { width: 36px; height: 36px; } .jm-go { display: none; } }
 </style>
 </head>
 <body>
@@ -614,6 +628,23 @@ body::after {
     </section>
 
 
+    <section class="row" id="jmos">
+      <h2 class="rv">Building JMOS<small>A series</small></h2>
+      <div>
+        <p class="rv jm-intro" style="--d:1">The operating system I'm building for our firm, written up as I go.</p>
+        <a class="jm-card rv" style="--d:2" id="jmLatest" href="/jmos/why-build/">
+          <img class="jm-mark" src="logos/jmos-mark.svg" alt="" width="44" height="44">
+          <span class="jm-body">
+            <span class="jm-meta" id="jmMeta">Latest: part 1, Nov 2026</span>
+            <span class="jm-title" id="jmTitle">Why I'm building my firm's own operating system</span>
+            <span class="jm-desc" id="jmDesc">Seven systems that don't talk to each other, and why I decided to build instead of buy.</span>
+          </span>
+          <span class="jm-go" aria-hidden="true">Read</span>
+        </a>
+        <p class="rv jm-all" style="--d:3"><a href="/jmos/">All parts of the series</a></p>
+      </div>
+    </section>
+
     <section class="row" id="about">
       <h2 class="rv">About</h2>
       <div class="text">
@@ -694,6 +725,23 @@ body::after {
   var fc = document.getElementById('footClock'); function ftick() { if (fc) fc.textContent = clock.textContent; } ftick(); setInterval(ftick, 30000);
 
 
+
+
+  /* Building JMOS: show the latest published part from the series page */
+  (function () {
+    var card = document.getElementById('jmLatest'); if (!card || !window.fetch || !window.DOMParser) return;
+    fetch('/jmos/', { cache: 'no-cache' }).then(function (r) { return r.ok ? r.text() : null; }).then(function (html) {
+      if (!html) return;
+      var d = new DOMParser().parseFromString(html, 'text/html');
+      var items = d.querySelectorAll('.parts li:not(.soon)'); if (!items.length) return;
+      var li = items[items.length - 1], a = li.querySelector('.t a'); if (!a) return;
+      var desc = li.querySelector('.t span'), n = li.querySelector('.n'), dt = li.querySelector('.d');
+      card.href = a.getAttribute('href');
+      document.getElementById('jmTitle').textContent = a.textContent;
+      if (desc) document.getElementById('jmDesc').textContent = desc.textContent;
+      document.getElementById('jmMeta').textContent = 'Latest: part ' + parseInt(n ? n.textContent : items.length, 10) + (dt ? ', ' + dt.textContent : '');
+    }).catch(function () {});
+  })();
 
   /* Tape prints after the headline has typed */
   var tapeStarted = false;
