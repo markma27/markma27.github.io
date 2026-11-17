@@ -7,11 +7,11 @@
 <link rel="icon" href="/favicon.ico?v=4" sizes="any">
 <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png?v=4">
 <link rel="apple-touch-icon" href="/apple-touch-icon.png?v=4">
-<meta name="description" content="Part 1 of Building JMOS. An accounting firm, a stack of systems that don't talk to each other, and why I decided to build instead of buy.">
+<meta name="description" content="Part 1 of Building JMOS. A stack of systems that don't talk to each other, work that depends on who does it, and why I decided to build instead of buy.">
 <meta property="og:type" content="article">
 <meta property="og:url" content="https://markma.au/jmos/why-build/">
 <meta property="og:title" content="Why I'm building my firm's own operating system">
-<meta property="og:description" content="Part 1 of Building JMOS. A stack of systems that don't talk to each other, and why I decided to build instead of buy.">
+<meta property="og:description" content="Part 1 of Building JMOS. A stack of systems that don't talk to each other, work that depends on who does it, and why I decided to build instead of buy.">
 <meta property="og:image" content="https://markma.au/og/jmos-part-1.jpg">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
@@ -43,14 +43,14 @@
         <p class="lbl"><a href="/jmos/" style="text-decoration:none;color:inherit">Building JMOS</a><small>Part 1, Nov 2026</small></p>
         <div>
           <h1>Why I'm building my firm's own operating system</h1>
-          <p class="stand">An accounting firm, a stack of systems that don't talk to each other, and why I decided to build instead of buy.</p>
+          <p class="stand">A stack of systems that don't talk to each other, work that depends on who does it, and why I decided to build instead of buy.</p>
         </div>
       </div>
 
       <section class="row">
         <h2>Part 1<small>3 minute read</small></h2>
         <div class="prose">
-          <p class="lead">I run Jaquillard Minns, an accounting firm in Adelaide. I've also started building its operating system. We call it JMOS.</p>
+          <p class="lead">I run Jaquillard Minns, an accounting firm in Adelaide. I've also started building its operating system, which we call JMOS. The goal is simple: a system that helps us deliver quality work consistently, so our people can spend more of their time with clients and on the work that adds value.</p>
 
           <h2>The problem isn't the software</h2>
           <p>Like most firms, we run on good software. Each system is good at its job.</p>
@@ -73,14 +73,14 @@
 
           <p>The trouble is that they don't talk to each other properly. So a lot of what happens in an accounting firm every day isn't accounting. It's moving information from one system to another, keying it in again, and then checking it arrived correctly.</p>
           <p>The checking matters. The moving shouldn't be anyone's job.</p>
-          <p>And when work is spread across that many places, it's hard to keep it consistent. In many firms, how a job gets done tends to live in people's heads. Two people can do the same job two different ways, and finding out where something is up to means asking around.</p>
+          <p>And when work is spread across that many places, it's hard to keep it consistent. In many firms, how a job gets done tends to live in people's heads. Two people can do the same job two different ways, so the result can depend on who did it, and finding out where something is up to means asking around.</p>
 
           <h2>Why build, not buy</h2>
           <p>I could have bought another tool. Plenty of practice software promises to tie everything together, and a lot of it ends up adding one more system to the list.</p>
           <p>What we needed was something that fits how our firm actually works, sits across the systems we already use, and can change when the way we work changes. That's what JMOS is. It connects to our systems through their APIs and brings the data into one place, so information is entered once and flows to where it's needed instead of being copied by hand.</p>
           <p>It runs on Microsoft Azure, with our data stored in Australia, in the Australia East region in Sydney.</p>
-          <p>Connecting the systems is only the start. The bigger aim is to systemise how we work: turning the way each job gets done into a clear workflow that runs the same way every time, whoever picks it up.</p>
-          <p>That makes us more efficient and more consistent. It takes away the copying and chasing, so our people spend more of their day on the part that needs them: reviewing, using judgement, and talking to clients. In the end, it's about delivering more value to clients, not just doing the same work faster.</p>
+          <p>Connecting the systems is only the start. The bigger aim is to systemise how we work: turning the way each job gets done into a clear workflow that runs the same way every time, whoever picks it up, so every client gets the same quality of work.</p>
+          <p>Consistency comes first, and efficiency follows. With less time spent copying and chasing, our people can spend more of their day where they add the most value: reviewing the work, building relationships with clients, and offering services that go beyond compliance. That's the real point: creating more value for clients, not just doing the same work faster.</p>
 
           <h2>Why now</h2>
           <p>I'm not a full-time developer. I started with Excel VBA macros years ago, then moved on to web tools, a Chrome extension, and the products I've shipped since, including Prepaidly and VendorAlert, two Xero add-ons.</p>
@@ -96,7 +96,7 @@
           <p>Today I build with AI as my co-developer, working with Cursor and Claude. That's the main reason a project like this is possible for a firm our size. A few years ago it would have needed a development team. Now it needs someone who understands the work and is willing to keep at it.</p>
 
           <h2>What this series is</h2>
-          <p>JMOS is internal. It's not a product and I'm not selling it. Every firm works differently, and I don't believe there's one system that fits them all. What suits us won't be right for everyone. But the questions it raises are ones a lot of firms are asking right now: whether a firm can build its own tools, what it takes to get your systems working together, and what changes for the people doing the work.</p>
+          <p>JMOS is internal. It's not a product and I'm not selling it. Every firm works differently, and I don't believe there's one system that fits them all. What suits us won't be right for everyone. But the questions it raises are ones a lot of firms are asking right now: whether a firm can build its own tools, what it takes to get systems and workflows working together, and what changes for the people doing the work.</p>
           <p>So I'm writing it up as I go: what we built, what worked, and what broke. It isn't finished, and parts of it don't work yet. That's part of the story too.</p>
           <p>In the coming parts, I'll share how I designed the system in more detail: how the pieces fit together, the choices I made along the way, and why.</p>
         </div>
