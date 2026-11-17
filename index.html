@@ -399,6 +399,14 @@ body::after {
 .jm-parts li.soon .t, .jm-parts li.soon .n { color: var(--faint); }
 .jm-all { margin-top: 16px; font-size: 15px; }
 @media (max-width: 560px) { .jm-parts li { grid-template-columns: 32px 1fr; } .jm-parts .d { grid-column: 2; } }
+
+/* Wider layout on large screens; reading widths stay as they are */
+@media (min-width: 1200px) {
+  :root { --label: 200px; }
+  .page { max-width: 1120px; }
+  .hero { grid-template-columns: 1fr 340px; gap: 72px; }
+  .jm-parts, .ledger { max-width: 860px; }
+}
 </style>
 </head>
 <body>

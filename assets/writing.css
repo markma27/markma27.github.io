@@ -173,3 +173,5 @@ footer.dark { margin: 72px calc(50% - 50vw) 0; padding: 0 calc(50vw - 50%); colo
   .path li { padding: 0; }
   .path li::before { left: -26px; top: 2px; }
 }
+
+@media (min-width: 1200px) { :root { --label: 200px; } .page { max-width: 1120px; } }
